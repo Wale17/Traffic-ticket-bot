@@ -33,7 +33,7 @@ def make_search(doc_type, plate_number, doc_number):
                 sleep(5)
                 if browser.is_element_visible("//font[@color='red']"):
                     continue
-                elif browser.is_element_visible("//b[@xpath='1']"):
+                elif browser.is_element_visible("//b[contains(text(),'NO se encontraron registros de comparendos para es')]"):
                     if doc_type == "CC":
                         browser.select_all_from_list("//select[@name='tipo_documento']", "1")
                     elif doc_type == "NIT":
@@ -54,6 +54,8 @@ def make_search(doc_type, plate_number, doc_number):
                             sleep(5)
                             if browser.is_element_visible("//font[@color='red']"):
                                 continue
+                            elif browser.is_element_visible("//b[contains(text(),'NO se encontraron registros de comparendos para es')]"):
+                                handler_process_utils.raise_error("No result found for both plate number and doc number")
                         except Exception as e:
                             raise(e)
                     else:

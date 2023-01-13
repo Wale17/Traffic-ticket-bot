@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/Users/i/Traffic ticket bot/task.py", line 29, in <module>
+    minimal_task()
+  File "/Users/i/Traffic ticket bot/task.py", line 23, in minimal_task
+    process.make_search(doc_type, plate_number, doc_number)
+  File "/Users/i/Traffic ticket bot/handlers/process.py", line 64, in make_search
+    raise(e)
+  File "/Users/i/Traffic ticket bot/handlers/process.py", line 60, in make_search
+    raise(e)
+  File "/Users/i/Traffic ticket bot/handlers/process.py", line 58, in make_search
+    handler_process_utils.raise_error("No result found for both plate number and doc number")
+  File "/Users/i/Traffic ticket bot/utilities/handler_process_utils.py", line 8, in raise_error
+    raise Exception(msg)
+Exception: No result found for both plate number and doc number
