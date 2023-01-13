@@ -5,15 +5,15 @@ from time import sleep
 
 
 url = "https://consultas.transitobogota.gov.co:8010/publico/index3.php"
-plate_number = "RBL907",
-doc_number = "333333",
-doc_type = "CC",
+plate_number = "Bch58d",
+doc_number = "79302230",
+doc_type = "CE",
 person_type = "Persona natural",
-email = "pruebitas@trolazo.com",
+email = "ariesgerman6405@gmail.com",
 mobile = "3174331649",
 origin = "Juzto.co",
-first_name = "Martha Janeth",
-last_name = "Jimenez Zambrano",
+first_name = "German Antonio",
+last_name = "Diaz leon",
 recurrent_query = False,
 update =  True
 

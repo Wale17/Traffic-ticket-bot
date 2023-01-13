@@ -24,7 +24,7 @@ def open_webpage(url):
 def make_search(doc_type, plate_number, doc_number):
     if plate_number != "" or plate_number != "null" or plate_number != None:
         browser.input_text("//input[@id='placa_veh']", plate_number)
-        for i in range(1):
+        for i in range(2):
             try:
                 browser.screenshot("//img[@alt='Security Code']", "captcha.png")
                 captcha_solution = captcha_solver.twocaptcha_solver("captcha.png")
@@ -45,7 +45,7 @@ def make_search(doc_type, plate_number, doc_number):
                     elif doc_type == "PA":
                         browser.select_all_from_list("//select[@name='tipo_documento']", "5")
                     browser.input_text("//input[@id='numero_identificacion']", doc_number)
-                    for i in range(1):
+                    for i in range(2):
                         try:
                             browser.screenshot("//img[@alt='Security Code']", "captcha.png")
                             captcha_solution = captcha_solver.twocaptcha_solver("captcha.png")
