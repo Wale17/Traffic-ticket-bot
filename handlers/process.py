@@ -1,12 +1,13 @@
 from RPA.Browser.Selenium import Selenium
 from utilities import handler_process_utils
 from service import captcha_solver
-import json
 import re
 from time import sleep
+# from RPA.Robocorp.WorkItems import WorkItems
 
 
 browser = Selenium()
+# workitem = WorkItems()
 
 def open_webpage(url):
     if url == "":
@@ -40,15 +41,17 @@ def make_search(doc_type, plate_number, doc_number):
                 elif browser.is_element_visible("//b[contains(text(),'NO se encontraron registros de comparendos para es')]"):
                     browser.clear_element_text("//input[@id='placa_veh']")
                     if doc_type == "CC":
-                        browser.select_all_from_list("//select[@name='tipo_documento']", "1")
+                        browser.select_from_list_by_value("*[@id='form1']/table[1]/tbody/tr/td/table/tbody/tr[2]/td/select']", "1")
                     elif doc_type == "NIT":
-                        browser.select_all_from_list("//select[@name='tipo_documento']", "2")
+                        browser.select_from_list_by_value("//select[@name='tipo_documento']", "2")
                     elif doc_type == "CE":
-                        browser.select_all_from_list("//select[@name='tipo_documento']", "3")
+                        browser.select_from_list_by_value("//*[@id='form1']/table[1]/tbody/tr/td/table/tbody/tr[2]/td/select", "3")
                     elif doc_type == "TI":
-                        browser.select_all_from_list("//select[@name='tipo_documento']", "4")
+                        browser.select_from_list_by_value("//select[@name='tipo_documento']", "4")
                     elif doc_type == "PA":
-                        browser.select_all_from_list("//select[@name='tipo_documento']", "5")
+                        browser.select_from_list_by_value("//select[@name='tipo_documento']", "5")
+                    else:
+                        handler_process_utils.handle_error("invalid doc type")
                     browser.input_text("//input[@id='numero_identificacion']", doc_number)
                     for i in range(2):
                         try:
@@ -61,16 +64,17 @@ def make_search(doc_type, plate_number, doc_number):
                                 continue
                             elif browser.is_element_visible("//tbody/tr[2]/td[1]/table[1]"):
                                 break
-                            elif browser.is_element_visible("//b[contains(text(),'NO se encontraron registros de comparendos para es')]"):
+                            elif browser.does_page_contain_element("//b[contains(text(),'NO se encontraron registros de comparendos para es')]"):
                                 handler_process_utils.raise_error("No result found for both plate number and doc number")
                         except Exception as e:
                             raise(e)
                     else:
-                        handler_process_utils.raise_error("couldn't solve captcha")        
+                        handler_process_utils.raise_error("couldn't solve captcha")       
             except Exception as e:
-                raise(e)
+                raise(e)                
         else:
-            handler_process_utils.raise_error("couldn't solve captcha")
+            handler_process_utils.raise_error("couldn't find comparendos for both plate number and doc number")
+            
     return 1
     
 def scrapr_from_the_initial_table(row_number, comparendo_list):
