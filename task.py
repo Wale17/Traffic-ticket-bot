@@ -23,6 +23,7 @@ def trafic_ticket():
         process.open_webpage(url)
         number_of_pages = process.make_search(doc_type, plate_number, doc_number)
         total_comparendo = {}
+        final_comparendo = {}
         for j in range(number_of_pages):
             for i in range(50):
                 try:
@@ -33,7 +34,7 @@ def trafic_ticket():
                         total_comparendo["comparendo{0}".format(i+1)] = comparendo_dict
                 except Exception as e:
                     raise(e)
-        final_comparendo = final_json.create_response_object(total_comparendo)
+        final_comparendo["data"] = total_comparendo
         json_object = json.dumps(final_comparendo, indent=4)
  
         with open("./output/schema.json", "w") as outfile:

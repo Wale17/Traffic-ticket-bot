@@ -1,7 +1,0 @@
-Traceback (most recent call last):
-  File "/Users/i/Traffic ticket bot/task.py", line 3, in <module>
-    from service import final_json
-  File "/Users/i/Traffic ticket bot/service/final_json.py", line 30
-    "comparendo_notification_link": 
-                                  ^
-SyntaxError: invalid syntax

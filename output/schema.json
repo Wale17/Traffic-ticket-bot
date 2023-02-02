@@ -1,59 +1,22 @@
 {
-    "type": "object",
-    "properties": {
-        "data": {
-            "type": "object",
-            "properties": {
-                "comparendos": {
-                    "type": [
-                        "object",
-                        "array"
-                    ],
-                    "items": {
-                        "type": "object",
-                        "properties": {
-                            "comparendo1": {
-                                "comparendo_type": " COMPARENDO - ELECTRONICO ",
-                                "comparendo_status": " VIGENTE  ",
-                                "id_comparendo": " 11001000000032907387 ",
-                                "placa": " JVS911  ",
-                                "comparendo_date": " 04/08/2022 ",
-                                "comparendo_saldo": " $468,500.00 ",
-                                "comparen_intereses": " $0.00 ",
-                                "comparendo_total": " $468,500.00 ",
-                                "comparendo_medium": " CAMARAS SALVAVIDAS  ",
-                                "comparendo_id_number": "625.581",
-                                "comparendo_id_type": "3 - CEDULA DE EXTRANJERIA",
-                                "comparendo_infraction_detail": "C29 ",
-                                "comparendo_titular_name": "- CONDUCIR UN VEHICULO A VELOCIDAD SUPERIOR A LA MAXIMA PERMITIDA.",
-                                "comparendo_notification_date": "04/08/2022",
-                                "comparen_link": "https://consultas.transitobogota.gov.co:8010/consultas_generales/imagen_comparendo.php?numero_comparendo=11001000000032907387&registro=26953200",
-                                "comparendo_notification_link": "https://consultas.transitobogota.gov.co:8010/consultas_generales/imagen_notificacion.php?numero_comparendo=11001000000032907387&registro=26953200"
-                            }
-                        },
-                        "required": [
-                            "codigoInfraccion",
-                            "descripcionInfraccion",
-                            "direccionComparendo",
-                            "estadoComparendo",
-                            "fechaComparendo",
-                            "infractorComparendo",
-                            "numeroComparendo",
-                            "placaVehiculo",
-                            "secretariaComparendo",
-                            "servicioVehiculo",
-                            "tipoVehiculo",
-                            "total"
-                        ]
-                    }
-                }
-            },
-            "required": [
-                "comparendos"
-            ]
+    "data": {
+        "comparendo1": {
+            "comparendo_type": " COMPARENDO - ELECTRONICO ",
+            "comparendo_status": " VIGENTE  ",
+            "id_comparendo": " 11001000000032907387 ",
+            "placa": " JVS911  ",
+            "comparendo_date": " 04/08/2022 ",
+            "comparendo_saldo": " $468,500.00 ",
+            "comparen_intereses": " $37,260.00 ",
+            "comparendo_total": " $505,760.00 ",
+            "comparendo_medium": " CAMARAS SALVAVIDAS  ",
+            "comparendo_id_number": "625.581",
+            "comparendo_id_type": "3 - CEDULA DE EXTRANJERIA",
+            "comparendo_infraction_detail": "C29 ",
+            "comparendo_titular_name": "- CONDUCIR UN VEHICULO A VELOCIDAD SUPERIOR A LA MAXIMA PERMITIDA.",
+            "comparendo_notification_date": "04/08/2022",
+            "comparen_link": "https://consultas.transitobogota.gov.co:8010/consultas_generales/imagen_comparendo.php?numero_comparendo=11001000000032907387&registro=26953200",
+            "comparendo_notification_link": "https://consultas.transitobogota.gov.co:8010/consultas_generales/imagen_notificacion.php?numero_comparendo=11001000000032907387&registro=26953200"
         }
-    },
-    "required": [
-        "data"
-    ]
+    }
 }
